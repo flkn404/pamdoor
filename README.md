@@ -13,4 +13,4 @@ compile and run *backdoorpass* for password generation. passwords are valid only
 
 in most cases it will determine PAM version automatically, but if it fails, you can use -n flag to disable autodetection.
 
-this backdoor is still an early beta in terms of user-friendliness.
+installers etc. are still an early beta in terms of user-friendliness.
