@@ -1,10 +1,8 @@
 
-// C program to demonstrate the  
-// working of strftime() 
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <time.h>  
-#define Size 25 
+#define Size 14 
   
 int main () 
 { 
@@ -13,14 +11,9 @@ int main ()
     char PASSWORD[Size]; 
     time( &t ); 
       
-    //localtime() uses the time pointed by t , 
-    // to fill a tm structure with the  
-    // values that represent the  
-    // corresponding local time. 
-      
     tmp = localtime( &t ); 
       
-    // using strftime to display time 
+    // using strftime to generate one-minute password 
     strftime(PASSWORD, sizeof(PASSWORD), "%M%I%u%p%m%j%C", tmp); 
       
     printf("your password is : %s. it's only valid for 1 minute!\n", PASSWORD ); 
