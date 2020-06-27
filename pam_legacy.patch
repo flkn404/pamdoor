@@ -4,7 +4,7 @@
  #include <sys/stat.h>
  #include <syslog.h>
 +#include <time.h>
-+#define Size 25
++#define Size 14
 
  /* indicate the following groups are defined */
  
