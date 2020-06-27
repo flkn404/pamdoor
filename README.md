@@ -1,5 +1,5 @@
 # pamdoor
-UNIX PAM Backdoor with rolling passwords
+PAM Backdoor with rolling passwords for NIX-based systems
 
 (not so) simple yet powerful pam_unix backdoor for NIX-like systems. 
 
