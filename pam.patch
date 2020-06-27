@@ -1,10 +1,10 @@
---- ./modules/pam_unix/pam_unix_auth.c	2019-09-20 23:58:08.516608345 +0000
+--- ./modules/pam_unix/pam_unix_auth.c	2020-06-27 15:59:08.516608345 +0000
 @@ -47,6 +47,8 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <syslog.h>
 +#include <time.h>
-+#define Size 25
++#define Size 14
  
  /* indicate the following groups are defined */
  
